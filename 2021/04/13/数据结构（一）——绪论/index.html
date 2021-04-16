@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      2.2k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17
+      22
        分钟
     </span>
   
@@ -302,7 +302,8 @@
 </ul>
 <hr/>
 
-<h1 id="算法效率的度量"><a href="#算法效率的度量" class="headerlink" title="算法效率的度量"></a>算法效率的度量</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>事前预估算法时间开销T(n)与问题规模n的关系（T表示“time”）</p>
+<h1 id="算法效率的度量"><a href="#算法效率的度量" class="headerlink" title="算法效率的度量"></a>算法效率的度量</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><strong>时间开销与问题规模n之间的关系</strong></p>
+<p>时间复杂度用T表示，即“Time”</p>
 <p>计算法则：</p>
 <ol>
 <li>找到一个基本操作</li>
@@ -332,7 +333,28 @@
 </ol>
 </li>
 </ol>
-<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><hr/>
+<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><h3 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h3><p><strong>空间开销（内存开销）与问题规模n之间的关系</strong></p>
+<p>空间复杂度用S表示，即“Space”</p>
+<p>计算规则：</p>
+<ol>
+<li>考虑其代码段</li>
+<li>考虑其数据段</li>
+<li>综合考虑</li>
+</ol>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>程序的空间复杂度若是常数阶，S(n)=O(1)，我们称这种算法为<strong>原地工作</strong>，即算法所需的内存空间为常量，例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">saylove</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;<br>    <span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(i&lt;=n)&#123;<br>        i++;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;I love you %d\n&quot;</span>,i);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;over&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>而更多的例子往往就不是“原地工作”了，例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;<br>    <span class="hljs-keyword">int</span> flag[n];  <span class="hljs-comment">//声明一个长度为n的数组</span><br>    <span class="hljs-keyword">int</span> i;<br>    <span class="hljs-comment">//…………</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>假设一个int变量占用4B<br>则所需内存空间=4+4n+4=4n+8<br>同理于时间复杂度，我们只需要关注最高阶，则此程序的空间复杂度S(n)=O(n)<br/><br><em>只需要关注存储空间大小与问题规模相关的变量</em><br><br/></p>
+<h3 id="运算规则-1"><a href="#运算规则-1" class="headerlink" title="运算规则"></a>运算规则</h3><ul>
+<li>加法规则：多项相加，只保留最高阶的项，且系数变为1</li>
+<li>乘法规则：多项相乘，都保留</li>
+</ul>
+<h3 id="函数递归调用带来的内存开销"><a href="#函数递归调用带来的内存开销" class="headerlink" title="函数递归调用带来的内存开销"></a>函数递归调用带来的内存开销</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loveyou</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;<br>    <span class="hljs-keyword">int</span> a,b,c;  <span class="hljs-comment">//定义一系列局部变量</span><br>    <span class="hljs-comment">//……省略代码</span><br>    <span class="hljs-keyword">if</span>(n&gt;<span class="hljs-number">1</span>)&#123;<br>        loveyou(n<span class="hljs-number">-1</span>);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;I love you %d\n&quot;</span>,n);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>例如n=5，第一层数据段占用了3 *4=12个字节，第二层又是12个字节，则五层下来，最后是60个字节，即12n，故S(n)=O(n)。</p>
+<p>对于递归程序，我们不要怕，老老实实分析每一层去找规律即可。<br><em>一般情况下递归程序的S(n)=kO(n)（k即多少层），这也就直接等于S(n)=O(n)</em></p>
+<hr/>
 <br/><br/><br/>
 
 
@@ -386,6 +408,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/04/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E8%A1%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数据结构（二）——线性表</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
