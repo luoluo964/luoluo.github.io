@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.8k 字
+      5k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      46
+      59
        分钟
     </span>
   
@@ -340,16 +340,7 @@
 
 <hr/>
 
-<h1 id="栈和队列的应用"><a href="#栈和队列的应用" class="headerlink" title="栈和队列的应用"></a>栈和队列的应用</h1><h2 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h2><h3 id="定义-7"><a href="#定义-7" class="headerlink" title="定义"></a>定义</h3><p>只允许从两端插入、两端删除的线性表</p>
-<blockquote>
-<p>延伸出更多的变种：</p>
-<ul>
-<li>输入受限的双端队列：只允许从一端插入、两端删除的线性表。</li>
-<li>输出受限的双端队列：只允许从两端插入、一端删除的线性表。</li>
-</ul>
-</blockquote>
-<p><em>关于这种问题只要知道哪种输出顺序是可能实现的即可，这里不再赘述</em></p>
-<h2 id="括号匹配问题"><a href="#括号匹配问题" class="headerlink" title="括号匹配问题"></a>括号匹配问题</h2><h3 id="定义-8"><a href="#定义-8" class="headerlink" title="定义"></a>定义</h3><p>分析一串字符串中的“()”、“[]”、“{}”是否成双出现。</p>
+<h1 id="栈的应用"><a href="#栈的应用" class="headerlink" title="栈的应用"></a>栈的应用</h1><h2 id="括号匹配问题"><a href="#括号匹配问题" class="headerlink" title="括号匹配问题"></a>括号匹配问题</h2><h3 id="定义-7"><a href="#定义-7" class="headerlink" title="定义"></a>定义</h3><p>分析一串字符串中的“()”、“[]”、“{}”是否成双出现。</p>
 <blockquote>
 <p>我们通过分析可以发现两个括号分析的特点：</p>
 <ol>
@@ -418,6 +409,77 @@
 <p><strong>递归缺点：太多层递归可能会导致栈溢出</strong></p>
 <p><img src="/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8%E6%A0%88-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97.JPG" srcset="/img/loading.gif" lazyload></p>
 <p><strong>递归缺点：递归可能会包含很多重复计算</strong></p>
+<h1 id="队列的应用"><a href="#队列的应用" class="headerlink" title="队列的应用"></a>队列的应用</h1><h2 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h2><h3 id="定义-8"><a href="#定义-8" class="headerlink" title="定义"></a>定义</h3><p>只允许从两端插入、两端删除的线性表</p>
+<blockquote>
+<p>延伸出更多的变种：</p>
+<ul>
+<li>输入受限的双端队列：只允许从一端插入、两端删除的线性表。</li>
+<li>输出受限的双端队列：只允许从两端插入、一端删除的线性表。</li>
+</ul>
+</blockquote>
+<p><em>关于这种问题只要知道哪种输出顺序是可能实现的即可，这里不再赘述</em></p>
+<h2 id="树的层次遍历"><a href="#树的层次遍历" class="headerlink" title="树的层次遍历"></a>树的层次遍历</h2><h3 id="遍历规则"><a href="#遍历规则" class="headerlink" title="遍历规则"></a>遍历规则</h3><ol>
+<li>将树的头结点放入队列。</li>
+<li>从队头中拿出当前结点，将其子节点（如果有的话）插入队尾</li>
+<li>重复2，即可遍历树的全部结点</li>
+</ol>
+<h2 id="图的广度优先遍历"><a href="#图的广度优先遍历" class="headerlink" title="图的广度优先遍历"></a>图的广度优先遍历</h2><h3 id="遍历规则-1"><a href="#遍历规则-1" class="headerlink" title="遍历规则"></a>遍历规则</h3><ol>
+<li>将某个结点放入队列</li>
+<li>从队头中拿出当前结点，检查当前结点相邻的结点有没有遍历过，将没有遍历过的结点插入队尾</li>
+<li>重复2，即可遍历图的全部结点</li>
+</ol>
+<h2 id="应用于操作系统————先来先服务"><a href="#应用于操作系统————先来先服务" class="headerlink" title="应用于操作系统————先来先服务"></a>应用于操作系统————先来先服务</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>多个进程争抢着有限的系统资源时，FCFS（First Come First Service，先来先服务）是一种常用策略。</p>
+<h2 id="矩阵的压缩存储"><a href="#矩阵的压缩存储" class="headerlink" title="矩阵的压缩存储"></a>矩阵的压缩存储</h2><h3 id="数组的存储结构"><a href="#数组的存储结构" class="headerlink" title="数组的存储结构"></a>数组的存储结构</h3><h4 id="一维数组的存储结构"><a href="#一维数组的存储结构" class="headerlink" title="一维数组的存储结构"></a>一维数组的存储结构</h4><p>各数组元素大小相同，且物理上连续存放。</p>
+<blockquote>
+<p>以0为起始下标的数组元素a[i]的存放地址：LOC+i*sizeof(ElemType);</p>
+</blockquote>
+<h4 id="二维数组的存储结构"><a href="#二维数组的存储结构" class="headerlink" title="二维数组的存储结构"></a>二维数组的存储结构</h4><p>在逻辑上，我们的二维数组是像一个表格一样存储的；但是在实际内存中，存储只能是线性的，一般有两种方法：</p>
+<ol>
+<li>行优先存储：将二维数组按行优先一行一行地存储。</li>
+<li>列优先存储：将二维数组按列优先一列一列地存储。</li>
+</ol>
+<p><img src="/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%86%85%E5%AD%98%E5%AD%98%E5%82%A8.JPG" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>若按行优先存储，则M行N列的二维数组中，以0为起始下标的数组元素a[i][j]的存放地址：LOC+(i*N+j)*sizeof(ElemType)；若是列优先，则：LOC+(j*M+j)*sizeof(ElemType)</p>
+</blockquote>
+<h3 id="矩阵存储"><a href="#矩阵存储" class="headerlink" title="矩阵存储"></a>矩阵存储</h3><h4 id="普通矩阵"><a href="#普通矩阵" class="headerlink" title="普通矩阵"></a>普通矩阵</h4><p>对于普通的矩阵，我们往往利用二维数组来存储。</p>
+<p><em>对于下面的特殊矩阵，我们就可以利用特殊的存储方式来压缩存储空间</em></p>
+<h4 id="对称矩阵"><a href="#对称矩阵" class="headerlink" title="对称矩阵"></a>对称矩阵</h4><p>若n阶方阵中任意一个元素aij都有a<sub>ij</sub>=a<sub>ji</sub>，则该矩阵为对称矩阵。</p>
+<p>压缩存储策略：只存储主对角线+下三角区（或主对角线+上三角区，我们以前者为例）</p>
+<p>我们按照行优先原则将各元素存入一维数组。</p>
+<p>即我们是n阶矩阵，则我们的数组存储总大小应该是：(1+n)*n/2。</p>
+<p>我们需要来创建一个映射函数，来将矩阵的下标映射为一维数组里的某个元素。</p>
+<p>根据行优先原则，我们可以推出：</p>
+<ul>
+<li>当i&gt;=j时，a<sub>ij</sub>对应的一维数组的是第[1+2+……+(i-1)]+j个元素，即(i-1)*i/2+j个元素（这里是位序，如果按下标去考虑则还要减一）。</li>
+<li>当i&lt;j时，我们可以利用对称矩阵的性质，将a<sub>ij</sub>转换为a<sub>ji</sub>，</li>
+</ul>
+<h4 id="三角矩阵"><a href="#三角矩阵" class="headerlink" title="三角矩阵"></a>三角矩阵</h4><p>以下三角矩阵为例：除了主对角线和下三角区，其余的所有元素都是一个常数。</p>
+<p>压缩存储策略：按行优先原则将主对角线和下三角区域存放在一维数组中。并在最后一个位置存储常数C。</p>
+<p><em>即相比于对称矩阵来说，我们需要多一个存储单元</em></p>
+<p>下面我们来思考映射思路：</p>
+<p>根据行优先原则，我们可以推出：</p>
+<ul>
+<li>当i&gt;=j时，a<sub>ij</sub>对应的一维数组的是第[1+2+……+(i-1)]+j个元素，即(i-1)*i/2+j个元素（这里是位序，如果按下标去考虑则还要减一）。</li>
+<li>当i&lt;j时，位序直接就是n*(n+1)/2+1。</li>
+</ul>
+<p>在三角矩阵的存储中，我们还需要考虑一下上三角矩阵的情况：<br>即当i&lt;=j时，访问元素a<sub>ij</sub>的话，前面的行（即第1行至i-1行）共有n+(n-1)+……+(n-i+2)个元素（<em>第1行n个、第2行n-1个，数字规律推得第(n-1)行有(n-i+2)个元素</em>），而第i行的第j个元素在一维数组中是这行的第(j-i)+1个元素，故：</p>
+<ul>
+<li>当i&lt;=j，k=(i-1)*(2n-i+2)/2+(i-j)+1（这里是位序）</li>
+<li>当i&gt;j，k=(n+1)*n/2+1</li>
+</ul>
+<h4 id="三对角矩阵"><a href="#三对角矩阵" class="headerlink" title="三对角矩阵"></a>三对角矩阵</h4><p>三角矩阵，又称带状矩阵：<br>当[i-j]&gt;1时，有a<sub>ij</sub>=0（i&lt;=i,j&lt;=n）</p>
+<p><img src="/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%B8%89%E5%AF%B9%E8%A7%92%E7%9F%A9%E9%98%B5%E7%A4%BA%E6%84%8F%E5%9B%BE.JPG" srcset="/img/loading.gif" lazyload></p>
+<p>由图可知，除了第一行和最后一行，其他每一行有效元素都是三个，故我们的一维数组总长度就是：3*n-2。</p>
+<p>下面我们来考虑映射思路：<br>按行优先原则，a<sub>ij</sub>是第几个元素？<br>前i-1个行共3*(i-1)-1个元素；a<sub>ij</sub>是第i行第j-i+2个元素；故a<sub>ij</sub>是2*i+j-2个元素。</p>
+<p><img src="/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%B8%89%E5%AF%B9%E8%A7%92%E7%9F%A9%E9%98%B5%E9%80%9A%E8%BF%87%E4%BD%8D%E5%BA%8F%E6%8E%A8%E4%BD%8D%E7%BD%AE.JPG" srcset="/img/loading.gif" lazyload></p>
+<h4 id="稀疏矩阵"><a href="#稀疏矩阵" class="headerlink" title="稀疏矩阵"></a>稀疏矩阵</h4><p>非零元素远远小于矩阵元素的个数。</p>
+<p>压缩存储策略：</p>
+<ul>
+<li>顺序存储——三元组&lt;行，列，值&gt;</li>
+<li>链式存储——十字链表法</li>
+</ul>
+<p><img src="/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8.JPG" srcset="/img/loading.gif" lazyload></p>
 <hr/>
 <hr/>
 <hr/>
